@@ -1,0 +1,346 @@
+/* #region global*/
+/* https://css-tricks.com/box-sizing/ */
+html {
+    box-sizing: border-box;
+}
+  *, *:before, *:after {
+    box-sizing: border-box;
+}
+/* #endregion global*/
+
+/* #region body */
+body{
+    background-color: rgb(240, 240, 240);
+    color: rgb(50, 50, 50);
+}
+/* #endregion body */
+
+/* #region main */
+.mainWelcome{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas: 
+    "head head"
+    "nav nav"
+    "img content"
+    "footer footer";
+}
+/* #endregion main */
+
+/* #region header */
+header{
+    grid-area: head;
+}
+
+.headerbanner{
+    background-color: #45aaf2;
+    background-image: url(../img/03478_sandycay_3840x1080.jpg);
+
+    height: 10em;
+    width: 100%;
+    min-width: 20em;
+
+    background-position: left bottom;
+    background-size: cover;
+
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 2px 2px 2px gray;
+    
+}
+
+header h1{
+    font-size: 2.5em;
+    font-style: italic;
+    font-weight: bold;
+    
+    color: white;
+
+    text-shadow: 0px 0px 15px rgba(255, 255, 255, 0.6);
+    text-align: left;
+    text-transform: uppercase;
+    
+    line-height: 1.1em;
+    letter-spacing: 0.1em;
+    word-spacing: 1em;
+
+    margin-top: 10px;
+    margin-bottom: 0px;
+    margin-left: 5%;
+    border: 0px;
+    padding-top: 10px;
+    padding-bottom: 0px;
+
+    visibility:  visible;
+    display: inline-block;
+
+    width: 300px;
+}
+
+#h1Destination {
+    margin-left: 10%;
+}
+/* #endregion header */
+
+/* #region nav */
+.navWelcome,
+.navtop{
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+
+    text-align: center;
+    text-transform: uppercase;
+    border-bottom: 1px solid grey;
+    margin: 5px 0px;
+    min-width: 20em;
+
+    list-style-type: none;
+    padding: 0;
+    overflow: hidden;
+    
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 2px 2px 2px gray;
+    background-color: #3867d6;
+}    
+
+.navWelcome{
+    display: grid;
+    display: inline-grid;
+    grid-area: nav;
+}
+
+.navWelcome ul,
+.navtop ul{
+    list-style-type: none;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    background-color:transparent;
+}
+
+nav a{
+    margin-right: 3%;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    float: left;
+}
+nav a:first-child{
+    margin-left: 1rem;
+}
+
+nav a:last-child{
+    margin-right: 0px;
+}
+
+.navWelcome::after,
+.navtop::after{
+    clear: left;
+}
+
+.navWelcome a:hover,
+.navtop a:hover{
+    color: #fa8231;
+}
+
+.aktuell{
+    font-weight: bold;
+    color: #fed330;
+}
+/* #endregion nav */
+
+/* #region aside */
+aside {
+    grid-area: img;
+    
+}
+
+aside img{
+    max-width: 100%;
+    max-height: 30%;
+    border-radius: 10px;
+    margin-right: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.sideimg{
+    margin-top: 0.5rem;
+}
+/* #endregion aside */
+
+/* #region footer */
+footer{
+    font-size: 120%;
+
+    background-color: #45aaf2;
+    color: rgb(240, 240, 240);
+    text-align: center;
+
+    margin: 0rem;
+    padding: 0rem;
+
+    clear: both;
+    display: flex;
+    justify-content: center;
+
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 2px 2px 2px gray;
+
+    grid-area: footer;
+}
+/* #endregion footer */
+
+/* #region Welcome */
+.welcome{
+    grid-area: content;
+}
+
+.welcome section{
+    background-color: #45aaf2;
+    color: rgb(240, 240, 240);
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 2px 2px 2px gray;
+    margin: 1rem;
+    margin-top: 0px;
+    
+    font-size: 120%;
+}
+
+.welcome h1{
+    font-size: 150%;
+    margin: 0.5rem;
+    margin-bottom: 0rem;
+    margin-left: 0rem;
+    padding: 1rem;
+    padding-bottom: 0.5rem;
+}
+
+.welcome p{
+    padding: 1rem;
+    padding-top: 0.5rem;
+    margin: 0px;
+}
+/* #endregion Welcome */
+
+/* #region Details */
+.tolmin,
+.bali,
+.domrep{
+    font-size: 120%;
+    display: flex;
+    flex-direction: column;
+}
+
+.tolmin section,
+.bali section,
+.domrep section{
+    background-color: #45aaf2;
+    color: rgb(240, 240, 240);
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 2px 2px 2px gray;
+    margin: 1rem;
+    margin-top: 0.5rem;
+    margin-left: 0px;
+    margin-right: 0px;
+    max-width: 100%;
+}
+
+.tolmin img,
+.bali img,
+.domrep img{
+    max-width: 30%;
+    max-height: 30%;
+    border-radius: 10px;
+    float: left;
+    margin-right: 1rem;
+}
+
+.tolmin h1,
+.bali h1,
+.domrep h1{
+    font-size: 150%;
+    font-size: 150%;
+    margin: 0.5rem;
+    margin-bottom: 0rem;
+    margin-left: 0rem;
+    padding: 1rem;
+    padding-bottom: 0.5rem;
+}
+
+.tolmin p,
+.bali p,
+.domrep p{
+    padding: 1rem;
+    padding-top: 0.5rem;
+    margin: 0px;
+}
+
+/* #endregion Slowenien */
+
+/* Screen size options */
+@media only screen and (max-width: 730px){
+
+    body {
+        width: 95%;
+    }
+
+    body img{
+        width: auto;
+    }    
+    .mainWelcome{
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        grid-template-rows: 1fr;
+        grid-template-areas: 
+        "head"
+        "nav"
+        "img"
+        "content"
+        "footer";
+    }
+
+    .welcome section{
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    .navWelcome,
+    .navtop{
+    position: initial;
+    font-size: 150%;
+    text-transform: none;
+    max-width: 100%;
+    min-width: initial;
+    }
+
+    .navtop ul{
+        margin: 0;
+        padding: 0;
+        background-color:transparent;
+    }
+
+    nav a{
+        margin-right: 0%;
+        display: inline-flex;
+        clear: both;
+    }
+    nav a:first-child,
+    nav a:last-child{
+        margin-left: 0px;
+    }
+
+    .tolmin img,
+    .bali img,
+    .domrep img{
+        max-width: 100%;
+        max-height: 100%;
+        border-radius: 10px;
+        float: left;
+        margin-right: 1rem;
+    }
+
+
+}
