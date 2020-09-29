@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>ParadisDestination</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/styles.css" rel="stylesheet" />
+</head>
+
+<body>
+    <header>
+        <div class="headerbanner">
+            <h1>Paradis</h1>
+            <br />
+            <h1 id="h1Destination">Destination</h1>
+        </div>
+    </header>
+
+    <nav class="navtop">
+        <ul>
+            <li class="navHamburger"><button class="hamburger" onclick="hamburgerFunction()">☰ Menü</button></li>
+            <li class="navNoHamburger"><a href="index.html">Welcome</a></li>
+            <li class="navNoHamburger"><a href="tolmin.html">Slowenien</a></li>
+            <li class="navNoHamburger"><a href="bali.html">Indonesien</a></li>
+            <li class="navNoHamburger"><a href="puntaCana.html">Dominikanische Republik</a></li>
+            <li class="navNoHamburger"><a href="contact.html" class="aktuell">Contact</a></li>
+            <li class="navNoHamburger"><a href="print.html">Print Layout</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <article class="contact">
+            <section>
+                <div class="question">
+                    <form>
+                        <div>
+                            <label for="uname">Name</label>
+                            <input required type="text" id="name" name="username">
+                        </div>
+                        <div>
+                            <label for="email">E-Mail</label>
+                            <input required type="email" id="email" name="email">
+                        </div>
+                        <div>
+                            <label for="destination">Destination</label>
+                            <select id="destination" name="destination">
+                                <option value="SLO">Slowenien</option>
+                                <option value="BALI">Indonesien</option>
+                                <option value="DOMREP">Dominikanische Republik</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="date">Besuchstag</label>
+                            <input type="date" id="date" name="date">
+                        </div>
+
+                        <div>
+                            <p>Weiterempfehlung:</p>
+                            <input type="radio" id="recomyes" name="recom" value="yes" checked>
+                            <label for="recomyes" class="radiolabel">Ja</label>
+                            <input type="radio" id="recomno" name="recom" value="no">
+                            <label for="recomno" class="radiolabel">Nein</label>
+                        </div>
+
+                        <div>
+                            <label  class="commentlabel" for="comment">Kommentar</label>
+                            <textarea id="comment" name="comment" style="height:200px"></textarea>
+                        </div>
+
+                        <div>
+                            <input id="contactsubmit" type="submit" value="Submit">
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </article>
+
+    </main>
+
+    <footer>
+        <h3>made by Georg</h3>
+    </footer>
+
+</body>
+
+<script>
+    var navWithoutHamburger = document.getElementsByClassName("navNoHamburger");
+    var navHamburger = document.getElementsByClassName("navHamburger");
+
+    function hamburgerFunction() {
+        // mit toggle kann man das html element der klasse zuweisen/entfernen
+        //navWithoutHamburger[index].classList.toggle("hidden");
+
+        if (navWithoutHamburger[0].style.display == "none") {
+            for (let index = 0; index < navWithoutHamburger.length; index++) {
+                navWithoutHamburger[index].style.display = "block";
+            }
+
+        } else if (navWithoutHamburger[0].style.display == "block") {
+            for (let index = 0; index < navWithoutHamburger.length; index++) {
+                navWithoutHamburger[index].style.display = "none";
+            }
+        } else {
+            for (let index = 0; index < navWithoutHamburger.length; index++) {
+                navWithoutHamburger[index].style.display = "block";
+            }
+        }
+    }
+</script>
+
+</html>

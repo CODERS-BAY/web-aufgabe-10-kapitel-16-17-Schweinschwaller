@@ -119,7 +119,8 @@ header h1{
     background-color:transparent;
 }
 
-nav a{
+nav a,
+nav button{
     margin-right: 3%;
     display: block;
     color: white;
@@ -128,6 +129,11 @@ nav a{
     text-decoration: none;
     float: left;
 }
+nav button{
+    background-color: transparent;
+    border: transparent;
+}
+
 nav a:first-child{
     margin-left: 1rem;
 }
@@ -149,6 +155,15 @@ nav a:last-child{
 .aktuell{
     font-weight: bold;
     color: #fed330;
+}
+
+.navHamburger,
+.print {
+    display: none;
+}
+
+.navNoHamburger{
+    display: block;
 }
 /* #endregion nav */
 
@@ -205,15 +220,15 @@ footer{
     box-shadow: 2px 2px 2px gray;
     margin: 1rem;
     margin-top: 0px;
+    margin-right: 0rem;
     
     font-size: 120%;
 }
 
 .welcome h1{
     font-size: 150%;
-    margin: 0.5rem;
-    margin-bottom: 0rem;
-    margin-left: 0rem;
+    margin: 0rem;
+    margin-top: 0.5rem;
     padding: 1rem;
     padding-bottom: 0.5rem;
 }
@@ -246,6 +261,7 @@ footer{
     margin-left: 0px;
     margin-right: 0px;
     max-width: 100%;
+    flex: 1;
 }
 
 .tolmin img,
@@ -280,8 +296,89 @@ footer{
 
 /* #endregion Slowenien */
 
+/* #region Contact */
+.contact{
+    width: 100%;
+    font-size: 120%;
+    margin-bottom: 0.5rem;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 2px 2px 2px gray;
+}
+
+.question{
+    width: 100%;
+    border-radius: 0.5rem;
+    background-color: #d1d8e0;
+    padding: 1.2rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.question form div > label{
+    width: 20%;
+    display: inline-block;
+}
+
+.question form div p{
+    width: 20%;
+    display: inline-block;
+}
+
+
+.question input,
+.question select,
+.question textarea {
+    width: 60%;
+    padding: 1rem;
+    border-radius: 0.15rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    resize: vertical;
+}
+
+.question input[type="radio"],
+.question input[type="range"]
+{
+    margin: 0%;
+    padding: 0%;
+    background-color: transparent;
+}
+
+#contactsubmit {
+    background-color: #45aaf2;
+    color: rgb(240, 240, 240);
+    padding: 1rem 1.2rem;
+    border: none;
+    border-radius: 0.2rem;
+    cursor: pointer;
+    width: 8rem;
+    font-size: 100%;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 2px 2px 2px gray;
+}
+
+#contactsubmit:hover{
+    background-color: gray;
+}
+
+#recomno,
+#recomyes{
+    width: 1.2rem;
+}
+
+.radiolabel{
+    width: 1rem !important;
+}
+
+.commentlabel{
+   float: left;
+}
+
+/* #endregion Contact */
+
 /* Screen size options */
-@media only screen and (max-width: 730px){
+@media only screen and (max-width: 800px){
 
     body {
         width: 95%;
@@ -337,10 +434,136 @@ footer{
     .domrep img{
         max-width: 100%;
         max-height: 100%;
+        width: 100%;
         border-radius: 10px;
         float: left;
         margin-right: 1rem;
     }
 
+    aside img{
+        width: 100%;
+    }
+
+    .contact{
+        width: 100%;
+        font-size: 120%;
+        margin-bottom: 0.5rem;
+        border-radius: 10px 10px 10px 10px;
+        box-shadow: 2px 2px 2px gray;
+    }
+    
+    .question{
+        width: 100%;
+        border-radius: 0.5rem;
+        background-color: #d1d8e0;
+        padding: 1.2rem;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .question input,
+    .question select,
+    .question textarea {
+        width: 100%;
+        padding: 1rem;
+        border-radius: 0.15rem;
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+        resize: vertical;
+    }
+    
+    .question input[type="radio"],
+    .question input[type="range"]
+    {
+        margin: 0%;
+        padding: 0%;
+        background-color: transparent;
+    }
+   
+    #contactsubmit {
+        background-color: #45aaf2;
+        color: rgb(240, 240, 240);
+        padding: 1rem 1.2rem;
+        border: none;
+        border-radius: 0.2rem;
+        cursor: pointer;
+        width: 8rem;
+        font-size: 100%;
+        border-radius: 10px 10px 10px 10px;
+        box-shadow: 2px 2px 2px gray;
+    }
+    
+    #contactsubmit:hover{
+        background-color: gray;
+    }
+    
+    #recomno,
+    #recomyes{
+        width: 1.2rem;
+        margin-bottom: 2rem;
+    }
+
+    .question form div p{
+        width: 100%;
+        display: inline-block;
+        margin-bottom: 0.5rem;
+    }
+
+    .navNoHamburger{
+        display: none;
+    }
+    .navHamburger{
+        display: block;
+    }
 
 }
+
+@media screen and (max-width: 530px) {
+    .mainWelcome{
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        grid-template-rows: 1fr;
+        grid-template-areas: 
+        "head"
+        "nav"
+        "img"
+        "content"
+        "footer";
+    }
+
+    nav ul {
+      display: block;
+      padding-left: 0;
+    }
+    nav li {
+      margin: 2px 0px;
+      background: #222;
+    }
+    .navigation button {
+      position: absolute;
+      top: 0rem;
+      right: 0.5rem;
+      border: 0;
+      background: white;
+      color: black;
+      font-size: inherit;
+      display: block;
+    }
+    .navigation ul {
+      display: none;
+      margin-top: 2rem;
+      margin-left: 1rem;
+    }
+    
+    .navNoHamburger{
+        display: none;
+    }
+    .navHamburger{
+        display: block;
+    }
+    /*
+    .hidden {
+        display: none;
+    }*/
+  }

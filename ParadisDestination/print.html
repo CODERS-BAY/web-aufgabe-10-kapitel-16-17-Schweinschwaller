@@ -10,27 +10,29 @@
 
 <body>
     <header>
-        <div class="headerbanner">
+        <div class="print">
             <h1>Paradis</h1>
             <br />
             <h1 id="h1Destination">Destination</h1>
         </div>
     </header>
 
-    <nav class="navtop">
+    <nav class="print">
         <ul>
-            <li><a href="index.html">Welcome</a></li>
-            <li><a href="tolmin.html">Slowenien</a></li>
-            <li><a href="bali.html">Indonesien</a></li>
-            <li><a href="puntaCana.html">Dominikanische Republik</a></li>
-            <li><a href="print.html" class="aktuell">Print Layout</a></li>
+            <li class="navHamburger"><button class="hamburger" onclick="hamburgerFunction()">☰ Menü</button></li>
+            <li class="navNoHamburger"><a href="index.html">Welcome</a></li>
+            <li class="navNoHamburger"><a href="tolmin.html">Slowenien</a></li>
+            <li class="navNoHamburger"><a href="bali.html">Indonesien</a></li>
+            <li class="navNoHamburger"><a href="puntaCana.html">Dominikanische Republik</a></li>
+            <li class="navNoHamburger"><a href="contact.html">Contact</a></li>
+            <li class="navNoHamburger"><a href="print.html" class="aktuell">Print Layout</a></li>
         </ul>
     </nav>
     <main>
 
-        <article class="tolmin">
+        <article>
             <section>
-                <h1><em><strong>Tolmin</strong></em></h1>
+                <h1><em><strong><a href="tolmin.html">Tolmin</a></strong></em></h1>
                 <p>
                     An der südlichen Grenze des Nationalparks Triglav, umarmt von den Flüssen Soca (ital. Isonzo - Anm.
                     d. Verf.)) im Westen und der Tolminka im Osten befindet sich die sehenswerte Kleinstadt Tolmin am
@@ -75,9 +77,9 @@
             </section>
         </article>
 
-        <article class="bali">
+        <article>
             <section>
-                <h1><em><strong>Jukung Bali Bungalow</strong></em></h1>
+                <h1><em><strong><a href="bali.html">Jukung Bali Bungalow</a></strong></em></h1>
                 <p>
                     Das Jukung Bali Bungalow begrüßt Sie am atemberaubend schönen Strand von Amed. Freuen Sie sich auf
                     Zimmer in unmittelbarer Strandnähe, eingebettet in üppige tropische Gärten. Auf Anfrage können Sie
@@ -123,9 +125,9 @@
             </section>
         </article>
 
-        <article class="domrep">
+        <article>
             <section>
-                <h1><em><strong>Grand Palladium Punta Cana Resort & Spa</strong></em></h1>
+                <h1><em><strong><a href="puntaCana.html">Grand Palladium Punta Cana Resort & Spa</a></strong></em></h1>
                 <p>
                     Entdecken Sie die Highlights des Grand Palladium Punta Cana Resort & Spa
 
@@ -191,12 +193,33 @@
             </section>
         </article>
     </main>
-    <footer>
+    <footer class="print">
         <addr class="email">
             <p>paradis.destination@live.at</p>
         </addr>
     </footer>
 
 </body>
+<script>
+    var navWithoutHamburger = document.getElementsByClassName("navNoHamburger");
+    var navHamburger = document.getElementsByClassName("navHamburger");
 
+    function hamburgerFunction() {
+        if(navWithoutHamburger[0].style.display=="none"){
+            for (let index = 0; index < navWithoutHamburger.length; index++) {
+                navWithoutHamburger[index].style.display="block";
+            }
+            
+        }else if(navWithoutHamburger[0].style.display=="block"){
+            for (let index = 0; index < navWithoutHamburger.length; index++) {
+                navWithoutHamburger[index].style.display="none";
+            }
+        }else{
+            for (let index = 0; index < navWithoutHamburger.length; index++) {
+                navWithoutHamburger[index].style.display="block";
+            }
+        }
+    }
+
+</script>
 </html>

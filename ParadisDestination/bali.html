@@ -19,11 +19,13 @@
 
     <nav class="navtop">
         <ul>
-            <li><a href="index.html">Welcome</a></li>
-            <li><a href="tolmin.html">Slowenien</a></li>
-            <li><a href="bali.html" class="aktuell">Indonesien</a></li>
-            <li><a href="puntaCana.html">Dominikanische Republik</a></li>
-            <li><a href="print.html">Print Layout</a></li>
+            <li class="navHamburger"><button class="hamburger" onclick="hamburgerFunction()">☰ Menü</button></li>
+            <li class="navNoHamburger"><a href="index.html">Welcome</a></li>
+            <li class="navNoHamburger"><a href="tolmin.html">Slowenien</a></li>
+            <li class="navNoHamburger"><a href="bali.html" class="aktuell">Indonesien</a></li>
+            <li class="navNoHamburger"><a href="puntaCana.html">Dominikanische Republik</a></li>
+            <li class="navNoHamburger"><a href="contact.html">Contact</a></li>
+            <li class="navNoHamburger"><a href="print.html">Print Layout</a></li>
         </ul>
     </nav>
     <main>
@@ -89,4 +91,25 @@
     </footer>
 </body>
 
+<script>
+    var navWithoutHamburger = document.getElementsByClassName("navNoHamburger");
+    var navHamburger = document.getElementsByClassName("navHamburger");
+
+    function hamburgerFunction() {
+        if(navWithoutHamburger[0].style.display=="none"){
+            for (let index = 0; index < navWithoutHamburger.length; index++) {
+                navWithoutHamburger[index].style.display="block";
+            }
+            
+        }else if(navWithoutHamburger[0].style.display=="block"){
+            for (let index = 0; index < navWithoutHamburger.length; index++) {
+                navWithoutHamburger[index].style.display="none";
+            }
+        }else{
+            for (let index = 0; index < navWithoutHamburger.length; index++) {
+                navWithoutHamburger[index].style.display="block";
+            }
+        }
+    }
+</script>
 </html>
