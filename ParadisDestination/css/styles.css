@@ -637,7 +637,7 @@ footer{
     aside,
     img, 
     footer  {
-      display: none;
+      display: none !important;
     }
 
     .welcome section,
